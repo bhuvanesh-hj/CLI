@@ -1,0 +1,113 @@
+Practice drill 2
+-----------------------------
+
+1. Print First Three Lines:
+   head -n 3 Harry\ Potter\ and\ the\ Goblet\ of\ Fire.txt
+   	"head" --> this will go in to the top of the file
+   	"-n" --> this tells the head to check specified number of line
+
+2. Print Last 10 Lines:
+   tail -n 10 Harry\ Potter\ and\ the\ Goblet\ of\ Fire.txt
+   	"tail" --> this will go in to the end of the file
+
+3. Word Occurrences:
+
+   	a. grep -o -i "Harry" Harry Potter and the Goblet of Fire.txt | wc -l
+   	"grep" --> used to search the pattern 
+   	"-o" --> only outputs the matched pattern
+   	"-i" --> case insensitive
+   	"wc" --> word count
+   	"-l" --> in list
+   	
+   	b. grep -o -i "Ron" Harry Potter and the Goblet of Fire.txt | wc -l
+   	c. grep -o -i "Hermione" Harry Potter and the Goblet of Fire.txt | wc -l
+   	d. grep -o -i "Dumbledore" Harry Potter and the Goblet of Fire.txt | wc -l
+
+4. Print Lines 100 to 200:
+   sed -n '100,200p' Harry Potter and the Goblet of Fire.txt
+   	"sed" --> its a built in stream editor
+   	"-n" --> numbers of line to print
+   	"100,200p' --> Regex
+
+5. Unique Words Count:
+   cat Harry Potter and the Goblet of Fire.txt | sort | uniq | wc -l
+   	"sort" --> sorting in the specified way
+   	"uniq" --> output should not contain dupicates
+
+Processes and Ports
+
+1. List Browser Process IDs:
+   pgrep -l firefox
+   	"p" --> to list process
+
+2. Stop Browser Application:
+   pkill firefox
+   	"pkill" --> to the process 
+
+3. Top 3 CPU Usage Processes:
+   top -bn1 | grep "^ *[0-9]" | sort -rk 9 | head -n 3
+   	"top" --> to see the CPU running tasks
+   	"-b" --> run in a batch
+   	"-n1" --> run only one time
+   	"-r" --> reverse the sorting
+   	"-k" --> sort by referring the column number
+
+4. Top 3 Memory Usage Processes:
+   top -bn1 | grep "^ *[0-9]" | sort -rk 10 | head -n 3
+	
+5. Start Python HTTP Server on Port 8000:
+   python3 -m http.server 8000
+
+6. Stop Previous Python HTTP Server:
+   - Use `ps aux | grep http.server` to find the PID and `kill PID`.
+
+7. Start Python HTTP Server on Port 90:
+   python3 -m http.server 90
+
+8. Display Active Connections:
+   netstat -tuln
+   	"netstat" --> network utility
+	"-t" --> tcp (Transmission Control Protocol sockets)
+	"-u" --> udp (User Datagram Protocol sockets)
+	"-l" --> listening sockets
+
+9. Find PID on Port 5432:
+   lsof -i :5432
+   	"lsof" --> list of open files
+   	"-i" --> to check the sockets
+
+Managing Software
+
+1. Install Packages (Ubuntu):
+   sudo apt update
+   sudo apt install htop vim nginx
+   	"sudo" --> super user do (root) user
+   	"apt" --> advanced package tool
+
+2. Uninstall `nginx`:
+   sudo apt remove nginx
+
+
+Miscellaneous Commands:
+
+1. Local IP Address:
+   ip addr show | grep inet
+	"ip" --> Internet protocol
+	"addr" --> address
+	"show" --> view 
+	"grep" --> filter
+	
+2. Find IP of `google.com`:
+   nslookup google.com
+   	"nslookup" --> network systems look up
+
+3. Check Internet Connectivity:
+   ping -c 4 google.com
+   	"ping" --> checking the connectivity
+
+4. Locate `node` and `code` Commands:
+   which node
+   which code
+   	"which" --> to locate the executable file
+   	"node" --> nodejs
+   	"code" --> VSCode

@@ -1,0 +1,36 @@
+Practice Drill 1
+------------------------------------
+1. Creating the directory structure :-
+	mkdir -p hello/five/six/seven 
+		- "mkdir" --> to create directory, 
+		- "-p" --> check if the file exist or if not create a 		 new one
+	mkdir -p hello/one/two/three/four
+	touch hello/five/six/c.txt
+		- "touch" --> to create new file
+	touch hello/five/six/seven/error.log
+	touch hello/one/a.txt
+	touch hello/one/b.txt
+	touch hello/one/two/d.txt
+	touch hello/one/two/three/e.txt
+	touch hello/one/two/three/four/access.log
+	
+2. Delete ".log" files :-
+	find hello -name "*.log" -delete (find <directory name> <specific name> <find string> <operation need to perform"
+		- "find" --> to query the particular file name in the mentioned directory
+		
+3. Add content to a.txt file :-
+	echo "Unix is a family of multitasking, multiuser computer operating systems that derive from the original AT&T Unix, development starting in the 1970s at the Bell Labs research center by Ken Thompson, Dennis Ritchie, and others" > hello/one/a.txt
+		- ">" --> redirect operation 
+
+4. Delete the directory named "five" :-
+	rm -r hello/five
+		"rm" --> rm used to remove the file or folder
+		"-r" --> options to specify remove if the directory contains some data
+		
+5. Rename directory "one" to "uno" :-
+	mv hello/one hello/uno
+		"mv" --> mv stands for the move the file or the folder & Also we ca use this to rename the file or folder
+	
+6 . Move "a.txt" to "two" :-
+	mv hello/uno/a.txt hello/uno/two
+		"mv" --> here we are using the mv command to move the file from one folder to another
